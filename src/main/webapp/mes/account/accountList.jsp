@@ -78,7 +78,7 @@
         });
 
         $('#btnCreateAccount').on('click', function () {
-            window.location.href = "/accountCreate.do";
+            window.location.href = "/account/create.do";
         });
 
         $('#btnDeleteAccount').on('click', function () {

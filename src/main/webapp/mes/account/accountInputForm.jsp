@@ -154,13 +154,13 @@
                 이전페이지
             </button>
 
-            <c:if test="${account == null and SESSION_CREATE_AUTH eq true}">
+            <c:if test="${account == null}">
                 <button type="submit" id="btnQuestionSubmit" class="btn btn-primary">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                     저장하기
                 </button>
             </c:if>
-            <c:if test="${account != null and SESSION_UPDATE_AUTH eq true}">
+            <c:if test="${account != null}">
                 <button type="submit" id="btnQuestionSubmit" class="btn btn-primary">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                     수정하기
@@ -170,9 +170,9 @@
     </form>
 </div>
 
-<c:if test="${account != null}">
+<%--<c:if test="${account != null}">
     <jsp:include page="accountInputFormManagerList.jsp"/>
-</c:if>
+</c:if>--%>
 
 <script type="text/javascript">
 

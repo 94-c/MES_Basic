@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Builder
@@ -33,6 +35,9 @@ public class AccountDto {
     private final String etc;
     private final String[] ids;
     private final Integer deleteStatus;
+
+    private final List<Account> accountList;
+    private final long totalCount;
 
     public Account toCreateEntity() {
         Account account = new Account();

@@ -42,7 +42,7 @@
 
     <div class="flex-content-between mb-1">
         <div class="ft-bold">
-            Total : ${accountTotalCount} 건
+            Total : ${totalAccountCount} 건
         </div>
         <div>
             <button type="button" id="btnCreateAccount" class="btn btn-primary">

@@ -7,6 +7,8 @@ import com.mes.service.AccountService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CreateAccountController implements Controller{
 
@@ -18,6 +20,7 @@ public class CreateAccountController implements Controller{
 
     @Override
     public String doGet(HttpServletRequest request, HttpServletResponse response) {
+        setNavigation(request);
         return "/mes/account/accountInputForm.jsp";
     }
 
@@ -35,5 +38,13 @@ public class CreateAccountController implements Controller{
         request.setAttribute("message", "거래처 등록이 성공하였습니다.");
         request.setAttribute("target", "/account/list.do");
         return "/mes/script/redirect.jsp";
+    }
+
+    private void setNavigation(HttpServletRequest request) {
+        List<String> navigation = new ArrayList<>();
+        navigation.add("거래처 관리");
+        navigation.add("거래처 정보 등록");
+
+        request.setAttribute("navigation", navigation);
     }
 }

@@ -65,8 +65,8 @@ public class Account {
     @Column(name = "etc")
     private String etc;
 
-    @Column(name = "delete_status")
-    private Integer deleteStatus;
+    @Column(name = "delete_state")
+    private Integer deleteState;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at")
