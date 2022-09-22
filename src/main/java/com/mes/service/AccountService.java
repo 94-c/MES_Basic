@@ -14,9 +14,9 @@ public class AccountService {
     private final AccountDao accountDao = new AccountDao();
     private final AccountQueryDao accountQueryDao = new AccountQueryDao();
 
-    public AccountDto findAllAccount(AccountDto dto) {
-        List<Account> accountList = accountQueryDao.findAllAccount(dto);
-        long accountTotalCount = accountQueryDao.countOfAccount(dto);
+    public AccountDto findAllAccount() {
+        List<Account> accountList = accountQueryDao.findAllAccount();
+        long accountTotalCount = accountQueryDao.countOfAccount();
         return AccountDto.builder()
                 .accountList(accountList)
                 .totalCount(accountTotalCount)

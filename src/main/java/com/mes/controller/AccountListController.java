@@ -36,10 +36,11 @@ public class AccountListController implements Controller{
     public String doGet(HttpServletRequest request, HttpServletResponse response) {
         setNavigation(request);
 
-        AccountDto result = accountService.findAllAccount(makeDto(request));
+        AccountDto result = accountService.findAllAccount();
 
         request.setAttribute("accountList", result.getAccountList());
         request.setAttribute("totalAccountCount", result.getTotalCount());
+
         return "/mes/account/accountList.jsp";
     }
 

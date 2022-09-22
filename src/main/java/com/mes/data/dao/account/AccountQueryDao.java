@@ -41,26 +41,23 @@ public class AccountQueryDao extends QueryDao {
         return accounts;
     }
 
-    private String makeAccountQuery(String type, AccountDto dto) {
+    private String makeAccountQuery(String type) {
         String sql = " SELECT ";
         sql += type.equals("list")
                 ? " * "
                 : " COUNT(*) AS count ";
         sql += " FROM accounts ";
         sql += " WHERE delete_state = 0 ";
-        sql += whereLike(" type ", dto.getType());
-        sql += whereLike( " code ", dto.getCode());
-        sql += whereLike( " name ", dto.getName());
         if (type.equals("list")) {
             sql += orderBy(" created_at ", " DESC ");
         }
         return sql;
     }
 
-    public long countOfAccount(AccountDto dto) {
+    public long countOfAccount() {
         long count = 0;
 
-        String sql = makeAccountQuery("count", dto);
+        String sql = makeAccountQuery("count");
 
         try(Connection conn = DBUtil.getDataSource().getConnection();
             Statement stmt = conn.createStatement();
@@ -75,10 +72,10 @@ public class AccountQueryDao extends QueryDao {
         return count;
     }
 
-    public List<Account> findAllAccount(AccountDto dto) {
+    public List<Account> findAllAccount() {
         List<Account> accountList = new ArrayList<>();
 
-        String sql = makeAccountQuery("list", dto);
+        String sql = makeAccountQuery("list");
 
         try(Connection conn = DBUtil.getDataSource().getConnection();
             Statement stmt = conn.createStatement();

@@ -25,6 +25,7 @@ public class AccountMapper {
                 .address2(request.getParameter("address_2"))
                 .addressDetail2(request.getParameter("address_detail_2"))
                 .etc(request.getParameter("etc"))
+                .deleteStatus(0)
                 .build();
     }
 }
