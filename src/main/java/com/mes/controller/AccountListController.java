@@ -40,7 +40,6 @@ public class AccountListController implements Controller{
 
         request.setAttribute("accountList", result.getAccountList());
         request.setAttribute("totalAccountCount", result.getTotalCount());
-
         return "/mes/account/accountList.jsp";
     }
 
