@@ -35,7 +35,6 @@ public class AccountDto {
     private final String etc;
     private final String[] ids;
     private final Integer deleteStatus;
-
     private final List<Account> accountList;
     private final long totalCount;
 
